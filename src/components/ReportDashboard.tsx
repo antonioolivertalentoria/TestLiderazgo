@@ -117,41 +117,6 @@ export function ReportDashboard({ report }: ReportDashboardProps) {
           </ul>
         </Card>
       </div>
-
-      <Card className="print-card">
-        <p className="text-xs uppercase tracking-[0.3em] text-dim">
-          Match por situación
-        </p>
-        <div className="mt-4 grid gap-3 md:grid-cols-3">
-          {report.matches.map((match) => (
-            <div
-              key={match.id}
-              className="rounded-2xl border border-glass bg-glass p-4"
-            >
-              <p className="text-sm font-semibold text-white">
-                {match.id}
-              </p>
-              <p className="text-xs text-dim">
-                Elegido: {match.selectedStyle}
-              </p>
-              <p className="text-xs text-dim">
-                Óptimo: {match.optimalStyle}
-              </p>
-              <p className="text-xs text-dim">
-                Efectividad: {match.effectiveness > 0 ? "+" : ""}
-                {match.effectiveness}
-              </p>
-              <p
-                className={`mt-2 text-xs font-semibold ${
-                  match.isMatch ? "text-emerald-300" : "text-amber-300"
-                }`}
-              >
-                {match.isMatch ? "Alineado" : "Ajuste posible"}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Card>
     </div>
   );
 }

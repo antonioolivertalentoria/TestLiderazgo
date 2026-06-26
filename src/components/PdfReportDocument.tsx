@@ -206,25 +206,6 @@ export default function PdfReportDocument({
           </View>
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Match por situación</Text>
-          <View style={styles.matchesGrid}>
-            {report.matches.map((match) => (
-              <View key={match.id} style={styles.matchCard}>
-                <Text style={styles.matchTitle}>{match.id}</Text>
-                <Text style={styles.subtitle}>Elegido: {match.selectedStyle}</Text>
-                <Text style={styles.subtitle}>Óptimo: {match.optimalStyle}</Text>
-                <Text style={styles.subtitle}>
-                  Efectividad: {match.effectiveness > 0 ? "+" : ""}
-                  {match.effectiveness}
-                </Text>
-                <Text style={styles.subtitle}>
-                  {match.isMatch ? "Alineado" : "Ajuste posible"}
-                </Text>
-              </View>
-            ))}
-          </View>
-        </View>
       </Page>
     </Document>
   );
