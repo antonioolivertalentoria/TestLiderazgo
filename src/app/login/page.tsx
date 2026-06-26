@@ -7,6 +7,8 @@ import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { Logo } from "@/components/Logo";
 
+const GUEST_CODE = "LIDERAZGO";
+
 export default function LoginPage() {
   const router = useRouter();
   const [mode, setMode] = useState<"login" | "signup">("login");
@@ -14,6 +16,52 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+
+  const [guestName, setGuestName] = useState("");
+  const [guestCompany, setGuestCompany] = useState("");
+  const [guestCode, setGuestCode] = useState("");
+  const [guestLoading, setGuestLoading] = useState(false);
+  const [guestMessage, setGuestMessage] = useState<string | null>(null);
+
+  const handleGuest = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setGuestMessage(null);
+
+    if (guestCode.trim().toUpperCase() !== GUEST_CODE) {
+      setGuestMessage("Código de acceso incorrecto. Pídelo a tu facilitador.");
+      return;
+    }
+    if (!guestName.trim() || !guestCompany.trim()) {
+      setGuestMessage("Escribe tu nombre completo y tu empresa.");
+      return;
+    }
+
+    setGuestLoading(true);
+    const { data, error } = await supabase.auth.signInAnonymously();
+    if (error || !data.user) {
+      setGuestLoading(false);
+      setGuestMessage(
+        error?.message ??
+          "No se pudo crear el acceso de invitado. Intenta de nuevo."
+      );
+      return;
+    }
+
+    // El rol 'guest' lo asigna el servidor (trigger handle_new_user); aquí solo
+    // completamos nombre y empresa.
+    const { error: profileError } = await supabase.from("profiles").upsert({
+      id: data.user.id,
+      full_name: guestName.trim(),
+      company: guestCompany.trim(),
+    });
+    setGuestLoading(false);
+    if (profileError) {
+      setGuestMessage(profileError.message);
+      return;
+    }
+
+    router.push("/survey");
+  };
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -157,6 +205,79 @@ export default function LoginPage() {
             </form>
           </Card>
         </div>
+
+        <Card className="space-y-5 border-[var(--brand-cyan)]/40">
+          <div className="flex flex-col gap-1">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--brand-cyan)]">
+              ¿Estás en una capacitación?
+            </p>
+            <h2 className="text-xl font-semibold text-white">
+              Entra como invitado
+            </h2>
+            <p className="text-sm text-white/60">
+              Sin correo ni contraseña. Escribe tus datos y el código que te dio
+              tu facilitador para comenzar el test de inmediato.
+            </p>
+          </div>
+          <form
+            onSubmit={handleGuest}
+            className="grid gap-4 md:grid-cols-3"
+          >
+            <div className="space-y-2">
+              <label className="text-xs uppercase tracking-[0.2em] text-white/60">
+                Nombre completo
+              </label>
+              <input
+                type="text"
+                required
+                value={guestName}
+                onChange={(event) => setGuestName(event.target.value)}
+                className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
+                placeholder="Ej. Ana Martínez"
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs uppercase tracking-[0.2em] text-white/60">
+                Empresa
+              </label>
+              <input
+                type="text"
+                required
+                value={guestCompany}
+                onChange={(event) => setGuestCompany(event.target.value)}
+                className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
+                placeholder="Ej. Talentoría"
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs uppercase tracking-[0.2em] text-white/60">
+                Código de acceso
+              </label>
+              <input
+                type="text"
+                required
+                value={guestCode}
+                onChange={(event) => setGuestCode(event.target.value)}
+                className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm uppercase text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
+                placeholder="Código de la sesión"
+              />
+            </div>
+            {guestMessage ? (
+              <p className="rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-xs text-white/70 md:col-span-3">
+                {guestMessage}
+              </p>
+            ) : null}
+            <div className="md:col-span-3">
+              <Button
+                type="submit"
+                className="w-full justify-center"
+                disabled={guestLoading}
+              >
+                {guestLoading ? "Preparando tu acceso..." : "Comenzar el test"}
+              </Button>
+            </div>
+          </form>
+        </Card>
       </div>
     </main>
   );

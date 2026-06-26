@@ -5,9 +5,13 @@ create table if not exists public.profiles (
   id uuid primary key references auth.users on delete cascade,
   email text,
   full_name text,
+  company text,
   role text not null default 'participant',
   created_at timestamptz not null default now()
 );
+
+-- Por si la tabla ya existía sin la columna company.
+alter table public.profiles add column if not exists company text;
 
 create table if not exists public.invitations (
   id uuid primary key default gen_random_uuid(),
@@ -33,15 +37,20 @@ create table if not exists public.survey_responses (
 create unique index if not exists survey_responses_user_version_unique
 on public.survey_responses (user_id, survey_version);
 
--- Auto-create profiles on signup
+-- Auto-create profiles on signup. Los usuarios anónimos (modo invitado)
+-- quedan marcados con rol 'guest' desde el servidor.
 create or replace function public.handle_new_user()
 returns trigger
 language plpgsql
 security definer set search_path = public
 as $$
 begin
-  insert into public.profiles (id, email)
-  values (new.id, new.email)
+  insert into public.profiles (id, email, role)
+  values (
+    new.id,
+    new.email,
+    case when new.is_anonymous then 'guest' else 'participant' end
+  )
   on conflict (id) do nothing;
   return new;
 end;
@@ -51,6 +60,29 @@ drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created
 after insert on auth.users
 for each row execute procedure public.handle_new_user();
+
+-- Seguridad: un usuario NO puede cambiar su propio rol (evita auto-promoverse
+-- a admin). Solo un admin existente, o el servidor (service role / SQL editor,
+-- donde auth.uid() es null), pueden modificar el rol.
+create or replace function public.prevent_role_change()
+returns trigger
+language plpgsql
+security definer set search_path = public
+as $$
+begin
+  if new.role is distinct from old.role
+     and auth.uid() is not null
+     and not public.is_admin() then
+    new.role := old.role;
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists profiles_no_role_change on public.profiles;
+create trigger profiles_no_role_change
+before update on public.profiles
+for each row execute procedure public.prevent_role_change();
 
 -- RLS
 alter table public.profiles enable row level security;
@@ -76,6 +108,12 @@ using (auth.uid() = id);
 create policy "profiles_update_own"
 on public.profiles for update
 using (auth.uid() = id)
+with check (auth.uid() = id);
+
+-- Permite que un usuario (incluido un invitado anónimo) cree/complete su propio
+-- perfil con nombre y empresa al entrar.
+create policy "profiles_insert_own"
+on public.profiles for insert
 with check (auth.uid() = id);
 
 create policy "profiles_admin_select"

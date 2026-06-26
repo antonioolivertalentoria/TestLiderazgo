@@ -14,6 +14,7 @@ type ProfileRow = {
   id: string;
   email: string | null;
   full_name: string | null;
+  company: string | null;
   role: string;
 };
 
@@ -48,7 +49,7 @@ export default function AdminPage() {
 
     supabase
       .from("profiles")
-      .select("id,email,full_name,role")
+      .select("id,email,full_name,company,role")
       .order("created_at", { ascending: false })
       .then(({ data }) => {
         setProfiles((data as ProfileRow[]) ?? []);
@@ -267,6 +268,8 @@ export default function AdminPage() {
             <table className="w-full text-left text-sm text-white/70">
               <thead>
                 <tr className="border-b border-white/10 text-xs uppercase tracking-[0.2em]">
+                  <th className="py-3 pr-4">Nombre</th>
+                  <th className="py-3 pr-4">Empresa</th>
                   <th className="py-3 pr-4">Correo</th>
                   <th className="py-3 pr-4">Rol</th>
                   <th className="py-3 pr-4">Último reporte</th>
@@ -278,6 +281,8 @@ export default function AdminPage() {
                   const response = responseByUser.get(item.id);
                   return (
                     <tr key={item.id} className="border-b border-white/5">
+                      <td className="py-3 pr-4">{item.full_name ?? "—"}</td>
+                      <td className="py-3 pr-4">{item.company ?? "—"}</td>
                       <td className="py-3 pr-4">{item.email ?? "—"}</td>
                       <td className="py-3 pr-4">{item.role}</td>
                       <td className="py-3 pr-4">
