@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+:root {
+  --brand-ink: #0b1220;
+  --brand-ink-soft: #0f172a;
+  --brand-magenta: #d30976;
+  --brand-cyan: #34a5dd;
+  --brand-text: #d1d5db;
+  --brand-white: #ffffff;
+  --brand-border: rgba(255, 255, 255, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--brand-ink);
+  --color-foreground: var(--brand-text);
+  --color-surface: var(--brand-ink-soft);
+  --color-magenta: var(--brand-magenta);
+  --color-cyan: var(--brand-cyan);
+  --color-white: var(--brand-white);
+  --color-border: var(--brand-border);
+  --font-sans: var(--font-montserrat);
+  --font-body: var(--font-open-sans);
+}
+
+body {
+  background: var(--brand-ink);
+  color: var(--brand-text);
+  font-family: var(--font-open-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat);
+}
+
+@layer utilities {
+  .bg-talentoria {
+    background:
+      radial-gradient(600px circle at 8% 8%, rgba(211, 9, 118, 0.14), transparent 55%),
+      radial-gradient(520px circle at 92% 92%, rgba(52, 165, 221, 0.14), transparent 60%),
+      var(--brand-ink);
+  }
+
+  .bg-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+    background-position: -6px -6px;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 18px rgba(211, 9, 118, 0.35);
+  }
+
+  .text-muted {
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .text-dim {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .text-faint {
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .bg-glass {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .bg-glass-10 {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .border-glass {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .border-glass-20 {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  body {
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .print-target,
+  .print-target * {
+    visibility: visible;
+  }
+
+  .print-target {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 24px;
+  }
+
+  .print-mode {
+    color: #0b1220;
+    background: #ffffff;
+  }
+
+  .print-mode h1,
+  .print-mode h2,
+  .print-mode h3,
+  .print-mode h4,
+  .print-mode h5,
+  .print-mode h6 {
+    color: #0b1220 !important;
+  }
+
+  .print-mode .text-white {
+    color: #0b1220 !important;
+  }
+
+  .print-mode .text-muted,
+  .print-mode .text-dim,
+  .print-mode .text-faint {
+    color: #4b5563 !important;
+  }
+
+  .print-mode .bg-glass,
+  .print-mode .bg-glass-10 {
+    background: #f5f7fb !important;
+  }
+
+  .print-mode .border-glass,
+  .print-mode .border-glass-20 {
+    border-color: #e5e7eb !important;
+  }
+
+  .print-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+}

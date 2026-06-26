@@ -1,0 +1,455 @@
+{
+  "meta": {
+    "sourceFile": "TEST LIDERAZGO SITUACIONAL (1).xlsx",
+    "extractedAt": "2026-03-20T19:57:20.017Z",
+    "questionCount": 12,
+    "scoringKeySource": "TEST LIDERAZGO SITUACIONAL CLAVE DE REVISIÓN.xlsx",
+    "note": "Estilo y efectividad por opcion derivados de la CLAVE oficial; corregidos 4 errores de formula (situaciones 4,5,6,12)."
+  },
+  "questions": [
+    {
+      "prompt": "Situación 1 Usted tiene un colaborador que no ha venido respondiendo a sus indicaciones ni a las acciones de apoyo que le ha ofrecido. El rendimiento del colaborador viene decayendo: ¿Cuál cree que sería la reacción natural?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Establece precisas indicaciones sobre lo que espera de él y le comunica de qué forma va a controlar su desempeño.",
+          "isCorrect": true,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": 2
+        },
+        {
+          "letter": "B",
+          "text": "Propone al colaborador una charla en privado para que éste le presente sus sugerencias de cómo realizar la tarea.",
+          "isCorrect": false,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": -1
+        },
+        {
+          "letter": "C",
+          "text": "Intenta demostrar la necesidad del cumplimiento de los objetivos dándole las razones que existen para ello.",
+          "isCorrect": false,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": 1
+        },
+        {
+          "letter": "D",
+          "text": "Comunica al colaborador los objetivos generales y permite que éste se desempeñe con total autonomía.",
+          "isCorrect": false,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": -2
+        }
+      ]
+    },
+    {
+      "prompt": "Situación 2 Usted tiene un colaborador que está mejorando en su desempeño. Él es consciente de esto y ha comenzado a efectuar sugerencias que parecen atinadas y valiosas. ¿Qué cree que usted haría en este caso?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Se asegura que el colaborador reciba toda la información necesaria para consolidar sus logros y escucha sus ideas.",
+          "isCorrect": true,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": 2
+        },
+        {
+          "letter": "B",
+          "text": "Aumenta el cuidado sobre las tareas de su colaborador e incrementa sus indicaciones.",
+          "isCorrect": false,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": -2
+        },
+        {
+          "letter": "C",
+          "text": "No hace nada y lo deja actuar.",
+          "isCorrect": false,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": -1
+        },
+        {
+          "letter": "D",
+          "text": "Se reúne con él para analizar su desempeño y le da sus opiniones al respecto fundamentando los aspectos positivos e importantes de la tarea.",
+          "isCorrect": false,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": 1
+        }
+      ]
+    },
+    {
+      "prompt": "Situación 3 Usted acaba de ser nombrado supervisor de un importante sector, reemplazando a un supervisor muy reconocido (el más antiguo) que se jubila. Usted fue bien recibido por el grupo y las relaciones son buenas. Usted se ha visto obligado a cambiar de puesto a casi todos sus colaboradores. Uno de ellos es el más afectado por el cambio y debe desempeñarse en tareas bastante diferentes a las anteriores. Ahora deberá aplicar una metodología de trabajo totalmente nueva para él. Él fue muy efectivo en su trabajo anterior. ¿Cuál de las siguientes sería su probable reacción?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Estimula al colaborador dándole las razones por las cuales deberá aplicar la nueva metodología y le permite que la estudie y resuelva cómo aplicarla.",
+          "isCorrect": false,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": 1
+        },
+        {
+          "letter": "B",
+          "text": "Discute con el colaborador la conveniencia de aplicar la nueva metodología y le pide sus opiniones",
+          "isCorrect": false,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": -1
+        },
+        {
+          "letter": "C",
+          "text": "Fija los objetivos y pone al alcance del colaborador los elementos para que aprenda la nueva metodología y la aplique según su propio criterio.",
+          "isCorrect": false,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": -2
+        },
+        {
+          "letter": "D",
+          "text": "Se reúne con el colaborador y organiza el aprendizaje de la nueva metodología, le informa con claridad de lo que se espera de su aplicación y los objetivos a alcanzar. Acompaña al colaborador en las primeras aplicaciones de la metodología.",
+          "isCorrect": true,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": 2
+        }
+      ]
+    },
+    {
+      "prompt": "Situación 4 Usted cuenta con un colaborador muy eficiente en tareas administrativas. Su trabajo es de toda confianza y seguridad. Se están discutiendo algunos pequeños cambios en la forma de llevar la administración. ¿Qué cree que haría usted en un caso así?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Pide opiniones al colaborador y decide los cambios.",
+          "isCorrect": false,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": 1
+        },
+        {
+          "letter": "B",
+          "text": "Decide cambios y los comunica al colaborador.",
+          "isCorrect": false,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": -2
+        },
+        {
+          "letter": "C",
+          "text": "Hace intervenir al colaborador en las discusiones y delega en él la forma de implementar lo decidido.",
+          "isCorrect": true,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": 2
+        },
+        {
+          "letter": "D",
+          "text": "Explica al colaborador las razones de los cambios que fueron decididos.",
+          "isCorrect": false,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": -1
+        }
+      ]
+    },
+    {
+      "prompt": "Situación 5 Uno de sus colaboradores ha venido obteniendo logros en una tarea que se le asignó recientemente. Usted ha estado controlando y contribuyendo con indicaciones precisas a estos logros. El colaborador siente seguridad para realizar la tarea. ¿Cuál cree que sería su manera natural de actuar en un caso así?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Deja que el colaborador se desempeñe con total autonomía en esta tarea.",
+          "isCorrect": false,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": -2
+        },
+        {
+          "letter": "B",
+          "text": "Pide al colaborador sugerencias de cómo mejorar la realización de la tarea.",
+          "isCorrect": false,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": -1
+        },
+        {
+          "letter": "C",
+          "text": "Se reúne con el colaborador y conversan sobre la tarea analizando los riesgos, beneficios y efectos de la tarea, acordando con él cómo continuarán la tarea en el futuro.",
+          "isCorrect": true,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": 2
+        },
+        {
+          "letter": "D",
+          "text": "Dados los buenos resultados continuará con el mismo estilo de supervisión de este colaborador.",
+          "isCorrect": false,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": 1
+        }
+      ]
+    },
+    {
+      "prompt": "Situación 6 Usted cuenta con un colaborador que se ha venido desempeñando satisfactoriamente y de manera bastante autónoma en sus tareas. La restricción de recursos obliga a cambiar algunos de los métodos que está utilizando. ¿Qué cree que haría usted en este caso?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Toma las decisiones necesarias y se sienta con su colaborador para explicárselas y darle su fundamentación.",
+          "isCorrect": false,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": 1
+        },
+        {
+          "letter": "B",
+          "text": "Informa al colaborador de la necesidad de hacer cambios y delega en él la tarea.",
+          "isCorrect": false,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": -1
+        },
+        {
+          "letter": "C",
+          "text": "Decide los cambios y se los comunica al colaborador.",
+          "isCorrect": false,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": -2
+        },
+        {
+          "letter": "D",
+          "text": "Deciden juntos los cambios a realizar habiendo establecido los objetivos.",
+          "isCorrect": true,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": 2
+        }
+      ]
+    },
+    {
+      "prompt": "Situación 7 Recientemente se han incorporado nuevas actividades y las tareas de sus colaboradores se verán modificadas en consecuencia. El grupo es trabajador, siempre ha demostrado voluntad de cooperar. Ellos no están muy informados de lo que estos cambios significan. ¿Cuál sería su actitud?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Informa de la necesidad de efectuar cambios y deja que en grupo los implemente.",
+          "isCorrect": false,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": -2
+        },
+        {
+          "letter": "B",
+          "text": "Reúne y explica las razones por las que deberán hacerse los cambios y fija los objetivos. Durante la reunión entrega toda la información necesaria para que se comprenda la situación.",
+          "isCorrect": true,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": 2
+        },
+        {
+          "letter": "C",
+          "text": "Reúne al grupo y pide las opiniones de los miembros respecto a los cambios a realizar. Decide los cambios y los comunica. Supervisa cuidadosamente.",
+          "isCorrect": false,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": 1
+        },
+        {
+          "letter": "D",
+          "text": "Cita al grupo y menciona en detalle los pasos a seguir.",
+          "isCorrect": false,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": -1
+        }
+      ]
+    },
+    {
+      "prompt": "Situación 8 Usted deberá implementar algunos cambios de procedimiento menores resultantes de un proceso de reingeniería que afecta a sus clientes internos. El grupo conoce la situación, es solvente y autónomo y ha demostrado flexibilidad en otras situaciones semejantes. ¿Qué cree que haría usted?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Da la información al grupo y delega la implementación.",
+          "isCorrect": true,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": 2
+        },
+        {
+          "letter": "B",
+          "text": "Toma decisiones y en una reunión las comunica fundamentándolas.",
+          "isCorrect": false,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": -1
+        },
+        {
+          "letter": "C",
+          "text": "Toma decisiones y las comunica individualmente supervisando cuidadosamente su cumplimiento.",
+          "isCorrect": false,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": -2
+        },
+        {
+          "letter": "D",
+          "text": "Reúne al grupo, plantea el problema y pide sugerencias para luego tomar la decisión.",
+          "isCorrect": false,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": 1
+        }
+      ]
+    },
+    {
+      "prompt": "Situación 9 El grupo que usted conduce ha manejado con autonomía y solvencia sus responsabilidades, pero ahora usted ha notado que están encontrando algunas dificultades que les plantean las últimas actividades propuestas por la mesa directiva. Tiene que hacer un estudio para una importante redistribución de tareas y usted percibe que están algo inquietos. ¿Qué cree usted que haría en una situación así?",
+      "options": [
+        {
+          "letter": "A",
+          "text": ". Toma el estudio a su cargo.",
+          "isCorrect": false,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": -2
+        },
+        {
+          "letter": "B",
+          "text": "Define con precisión los objetivos y deja que el grupo trabaje autónomamente como siempre.",
+          "isCorrect": false,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": 1
+        },
+        {
+          "letter": "C",
+          "text": "Se reúne con el grupo y dirige la discusión en búsqueda del mejor planteo del estudio, estimulando el aporte de ideas.",
+          "isCorrect": true,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": 2
+        },
+        {
+          "letter": "D",
+          "text": "Se reúne con el grupo y les explica la importancia de resolver este estudio correctamente. Supervisa con todo cuidado.",
+          "isCorrect": false,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": -1
+        }
+      ]
+    },
+    {
+      "prompt": "Situación 10 La situación anterior se ha agravado notablemente, se acerca el plazo de la redistribución de tareas y el grupo está desorientado. La gerencia se ha enterado de lo que sucede y lo está presionando por resultados. ¿Qué haría en este caso?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Se reúne con el grupo y les explica la importancia de resolver este estudio correctamente. Supervisa con todo cuidado.",
+          "isCorrect": false,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": 1
+        },
+        {
+          "letter": "B",
+          "text": "Define con precisión los objetivos y deja que el grupo trabaje autónomamente como siempre.",
+          "isCorrect": false,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": -2
+        },
+        {
+          "letter": "C",
+          "text": "Se reúne con el grupo y dirige la discusión en búsqueda del mejor planteo del estudio estimulando el aporte de ideas.",
+          "isCorrect": false,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": -1
+        },
+        {
+          "letter": "D",
+          "text": "Toma la conducción del estudio a su cargo.",
+          "isCorrect": true,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": 2
+        }
+      ]
+    },
+    {
+      "prompt": "Situación 11 Al incorporarse las nuevas disposiciones hay un sector que casi no se ha visto modificado. El grupo es eficiente y ha venido respondiendo con seguridad a los pocos cambios que se requirieron. ¿Qué cree usted que haría?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Informa que ante la situación de reorganizaciones, será necesario conducir al grupo con instrucciones más precisas y controlar cuidadosamente el desempeño.",
+          "isCorrect": false,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": -2
+        },
+        {
+          "letter": "B",
+          "text": "No hace nada. Sigue su conducta habitual.",
+          "isCorrect": true,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": 2
+        },
+        {
+          "letter": "C",
+          "text": "Reúne al grupo y fundamenta la necesidad de aumentar el control sobre las tareas.",
+          "isCorrect": false,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": -1
+        },
+        {
+          "letter": "D",
+          "text": "Reúne al grupo para discutir y recibir sugerencias de cómo actuar en la presente situación.",
+          "isCorrect": false,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": 1
+        }
+      ]
+    },
+    {
+      "prompt": "Situación 12 El grupo ha venido reduciendo su desempeño como consecuencia de la disminución de recursos disponibles. Se había caracterizado por ser un grupo dinámico y con frecuencia hacía aportes y sugerencias. La situación actual no es crítica, ni extrema. ¿Qué cree usted que haría?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Reúne al grupo y pide sugerencias.",
+          "isCorrect": false,
+          "style": "APOYAR",
+          "styleCode": "S3",
+          "effectiveness": 1
+        },
+        {
+          "letter": "B",
+          "text": "Reúne al grupo y describe la situación y lo que se espera que suceda en el futuro próximo. Repasa los objetivos y aumenta cuidadosamente el control sobre las tareas.",
+          "isCorrect": true,
+          "style": "ENTRENAR",
+          "styleCode": "S2",
+          "effectiveness": 2
+        },
+        {
+          "letter": "C",
+          "text": "No hace nada. El grupo es bueno y reaccionará.",
+          "isCorrect": false,
+          "style": "DELEGAR",
+          "styleCode": "S4",
+          "effectiveness": -2
+        },
+        {
+          "letter": "D",
+          "text": "Incremento el control sobre el cumplimiento de las tareas, redefine los objetivos y plazos.",
+          "isCorrect": false,
+          "style": "DIRIGIR",
+          "styleCode": "S1",
+          "effectiveness": -1
+        }
+      ]
+    }
+  ]
+}
