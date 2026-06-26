@@ -179,11 +179,29 @@ export default function SurveyPage() {
         </div>
 
         <div className="flex flex-col gap-8">
-          {questions.map((question) => (
+          {questions.map((question, index) => {
+            const match = question.prompt.match(
+              /^Situaci[oó]n\s+(\d+)\s+([\s\S]*)$/i
+            );
+            const situationLabel = match
+              ? `Situación ${match[1]}`
+              : `Situación ${index + 1}`;
+            const promptBody = match ? match[2] : question.prompt;
+            return (
             <Card key={question.id} className="space-y-4">
-              <h2 className="text-lg font-semibold text-white">
-                {question.prompt}
-              </h2>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="inline-flex w-fit items-center rounded-full bg-[var(--brand-magenta)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-white">
+                    {situationLabel}
+                  </span>
+                  <span className="text-xs font-medium text-white/40">
+                    {index + 1} / {questions.length}
+                  </span>
+                </div>
+                <h2 className="text-lg font-semibold leading-relaxed text-white">
+                  {promptBody}
+                </h2>
+              </div>
               <div className="grid gap-3">
                 {question.options.map((option) => {
                   const selected = answers[question.id] === option.letter;
@@ -206,7 +224,8 @@ export default function SurveyPage() {
                 })}
               </div>
             </Card>
-          ))}
+            );
+          })}
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4">
